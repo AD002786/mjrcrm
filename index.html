@@ -1599,9 +1599,12 @@ var PLAN={id:'sf-45',start:'2026-11-21',end:'2027-01-05',docUrl:'https://claude.
   weeks:[
     {t:'Week 1 · Nov 21–28',h:'Fix the foundation',items:[
       ['w1a','Confirm our contract or assignment position, and whether the KW and DTSpade listings are active'],
-      ['w1b','Get the City of South Fulton zoning letter for both parcels (14FF-0100-LL-033 and 14F0071 LL0570)'],
+
       ['w1c','Agree one price per tract, the seller\'s floor, and terms we can offer (phased takedown, option, seller financing)'],
-      ['w1d','Build a one-page data package per tract: zoning letter, concept plan, utilities, survey, aerial, price per lot'],
+      ['w1d','Request zoning verification letters from the City of South Fulton for both parcels (this is the key missing proof)'],
+      ['w1g','Ask the seller for existing boundary surveys on both tracts, plus the Thaxton Rd legal description'],
+      ['w1h','Pull aerials with parcel lines from Fulton County GIS for both parcels'],
+      ['w1i','Send the updated package (new cover with price per lot + location page); add the zoning letters once they arrive'],
       ['w1e','Call Kyle Gable and John Speros: offer a co-op fee and ask what builders pay per lot on Union Rd now'],
       ['w1f','Use one price and one zoning story everywhere: landing page, Deal Desk, listing brokers']]},
     {t:'Week 2 · Nov 30–Dec 5',h:'Hit every buyer at once',items:[
@@ -1632,7 +1635,7 @@ function planLeft(){var e=new Date(PLAN.end+'T00:00:00'),n=new Date();n.setHours
 function planHTML(){
   var done=planDoc().done||{},ids=planItems(),nd=ids.filter(function(k){return done[k]}).length,pct=Math.round(nd/ids.length*100),S=scoreAll();
   var h='<div class="plan">';
-  h+='<div class="panel plan-hero"><div class="ph-l"><p class="sec">South Fulton land · Union Rd + Thaxton Rd · 126 lots</p><h2>Signed contract by Dec 19 · close by Jan 5</h2><p class="mute">Thanksgiving and Christmas fall inside the window, so aim for a signed contract with a short diligence period by about December 19.</p><a class="btn sm" href="'+PLAN.docUrl+'" target="_blank" rel="noopener">Open the plan doc ↗</a></div>'+
+  h+='<div class="panel plan-hero"><div class="ph-l"><p class="sec">South Fulton land · Union Rd + Thaxton Rd · 126 lots</p><h2>Signed contract by Dec 19 · close by Jan 5</h2><p class="mute">Thanksgiving and Christmas fall inside the window, so aim for a signed contract with a short diligence period by about December 19.</p><a class="btn sm" href="'+PLAN.docUrl+'" target="_blank" rel="noopener">Open the plan doc ↗</a><a class="btn sm" style="margin-left:8px" href="https://ad002786.github.io/mjr/South_Fulton_Land_Package.pdf" target="_blank" rel="noopener">Buyer package PDF ↗</a></div>'+
      '<div class="ph-r"><div class="ph-stat"><b>Day '+planDay()+'</b><span>of 45</span></div><div class="ph-stat"><b>'+planLeft()+'</b><span>days left</span></div><div class="ph-stat"><b class="g">'+nd+'/'+ids.length+'</b><span>tasks done</span></div><div class="ph-bar"><span style="width:'+pct+'%"></span></div></div></div>';
   h+='<div class="panel plan-alert"><h2>⚠ Fix these first: both tracts are already listed by other brokers</h2><p class="mute">The public listings also say the land is entitled, while our notes say rezoning is unverified. Builders compare notes; two prices and two zoning stories make them pass. Most active builders have probably already seen these tracts.</p>'+
      '<div class="tbl-wrap plain"><table class="ptbl"><thead><tr><th>Tract</th><th>Listed by</th><th>Their price</th><th>Our price</th><th>Their listing claims</th></tr></thead><tbody>'+
